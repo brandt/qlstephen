@@ -113,6 +113,13 @@ xcuserdata
 #
 #
 
+# These settings are user-specific and don't need to be committed
+*.xcsettings
+*.xcworkspacedata
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
 ####
 # Xcode 4 - Deprecated classes
 #
