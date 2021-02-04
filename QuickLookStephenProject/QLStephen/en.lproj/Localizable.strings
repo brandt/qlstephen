@@ -1,0 +1,66 @@
+﻿/* No comment provided by engineer. */
+"%@ File" = "%@ File";
+
+/* No comment provided by engineer. */
+"%@ items could not be added because they are not text-based documents." = "%@ items could not be added because they are not text-based documents.";
+
+/* No comment provided by engineer. */
+"%@ of %@ items could not be added because they are not text-based documents." = "%1$@ of %2$@ items could not be added because they are not text-based documents.";
+
+/* No comment provided by engineer. */
+"Are you sure you want to remove the selected file mapping?" = "Are you sure you want to remove the selected file mapping?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to remove the selected file mappings?" = "Are you sure you want to remove the selected file mappings?";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Create Dummy App" = "Create Dummy App";
+
+/* No comment provided by engineer. */
+"Creating Dummy App…" = "Creating Dummy App…";
+
+/* No comment provided by engineer. */
+"Disable" = "Disable";
+
+/* No comment provided by engineer. */
+"Disable %@ items" = "Disable %@ items";
+
+/* No comment provided by engineer. */
+"Disable “%@”" = "Disable “%@”";
+
+/* No comment provided by engineer. */
+"Enable %@ items" = "Enable %@ items";
+
+/* No comment provided by engineer. */
+"Enable “%@”" = "Enable “%@”";
+
+/* No comment provided by engineer. */
+"Filename extensions cannot contain a period." = "Filename extensions cannot contain a period.";
+
+/* No comment provided by engineer. */
+"Filename extensions must have at least one character." = "Filename extensions must have at least one character.";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Remove" = "Remove";
+
+/* No comment provided by engineer. */
+"The “%@” file could not be added because it is not a text-based document." = "The “%@” file could not be added because it is not a text-based document.";
+
+/* No comment provided by engineer. */
+"This cannot be undone." = "This cannot be undone.";
+
+/* No comment provided by engineer. */
+"Update Dummy App" = "Update Dummy App";
+
+/* No comment provided by engineer. */
+"Updating Dummy App…" = "Updating Dummy App…";
+
+/* No comment provided by engineer. */
+"You already have a mapping for the “%@” filename extension." = "You already have a mapping for the “%@” filename extension.";
+

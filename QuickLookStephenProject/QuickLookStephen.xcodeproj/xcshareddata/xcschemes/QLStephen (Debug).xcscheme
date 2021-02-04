@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-               BuildableName = "QLStephen.qlgenerator"
-               BlueprintName = "QuickLookStephen"
+               BlueprintIdentifier = "C193110225B739F2008830E4"
+               BuildableName = "QLStephen.app"
+               BlueprintName = "QLStephen"
                ReferencedContainer = "container:QuickLookStephen.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-            BuildableName = "QLStephen.qlgenerator"
-            BlueprintName = "QuickLookStephen"
+            BlueprintIdentifier = "C193110225B739F2008830E4"
+            BuildableName = "QLStephen.app"
+            BlueprintName = "QLStephen"
             ReferencedContainer = "container:QuickLookStephen.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-            BuildableName = "QLStephen.qlgenerator"
-            BlueprintName = "QuickLookStephen"
+            BlueprintIdentifier = "C193110225B739F2008830E4"
+            BuildableName = "QLStephen.app"
+            BlueprintName = "QLStephen"
             ReferencedContainer = "container:QuickLookStephen.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
