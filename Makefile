@@ -1,30 +1,37 @@
-.PHONY: QuickLookStephen debug clean
+VERSION := VERSION
+XCODE_CONFIGURATION := Release
+BUILD_DIR = "build/${XCODE_CONFIGURATION}"
+BUILD_PRODUCTS = "${BUILD_DIR}/QLStephen Dummy.app" "${BUILD_DIR}/QLStephen.app" "${BUILD_DIR}/QLStephen.qlgenerator"
+# XCODE_CONFIGURATION := "Debug"
 
-QuickLookStephen:
-	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Release" $(XC_OPTIONS) build -alltargets
+.PHONY: build install uninstall package clean realclean
 
-debug:
-	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Debug" $(XC_OPTIONS) build -alltargets
+build: | clean
+	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "${XCODE_CONFIGURATION}" $(XC_OPTIONS) build -alltargets
 
-install:
-	@if [ -d  "./build/Release/QLStephen.qlgenerator" ]; then \
-		rm -rf ~/Library/QuickLook/QLStephen.qlgenerator ; \
-		cp -r ./build/Release/QLStephen.qlgenerator ~/Library/QuickLook/ ; \
-		qlmanage -r ; \
-	else \
-		echo "Sorry, nothing to install. You might want to build it first. ;-)"; \
-	fi
+$BUILD_PRODUCTS: build
 
-package:
-	@if [ -d  "./build/Release/QLStephen.qlgenerator" ]; then \
-		rm -rf "./build/Release/packaged" ; \
-		mkdir "build/Release/packaged" ; \
-		cd "build/Release" ; \
-		zip -rX "./packaged/QLStephen.qlgenerator.VERSION.zip" "./QLStephen.qlgenerator" ; \
-		sha256sum "./packaged/QLStephen.qlgenerator.VERSION.zip" ; \
-	else \
-		echo "Sorry, nothing to package. You might want to build it first. ;-)"; \
-	fi
+install: $BUILD_PRODUCTS | uninstall
+	mkdir -p ~/Applications
+	cp -r "${BUILD_DIR}/QLStephen Dummy.app" ~/Applications/
+	sudo cp -r "${BUILD_DIR}/QLStephen.app" /Applications/
+	cp -r "${BUILD_DIR}/QLStephen.qlgenerator" ~/Library/QuickLook/
+	qlmanage -r
+
+uninstall:
+	rm -rf ~/Applications/QLStephen\ Dummy.app
+	rm -rf ~/Library/QuickLook/QLStephen.qlgenerator
+	sudo rm -rf /Applications/QLStephen.app
+
+package: $BUILD_PRODUCTS
+	rm -rf "package"
+	mkdir -p "package/QLStephen-${VERSION}-${XCODE_CONFIGURATION}"
+	cp -r ${BUILD_PRODUCTS} "package/QLStephen-${VERSION}-${XCODE_CONFIGURATION}"
+	cd "package" && zip -rX "QLStephen-${VERSION}-${XCODE_CONFIGURATION}.zip" "QLStephen-${VERSION}-${XCODE_CONFIGURATION}"
+	sha256sum "package/QLStephen-${VERSION}-${XCODE_CONFIGURATION}.zip"
 
 clean:
 	@rm -rf ./build
+
+realclean: clean
+	@rm -rf ./package
