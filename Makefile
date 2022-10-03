@@ -1,10 +1,10 @@
 .PHONY: QuickLookStephen debug clean
 
 QuickLookStephen:
-	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Release" $(XC_OPTIONS) build
+	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Release" $(XC_OPTIONS) build -alltargets
 
 debug:
-	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Debug" $(XC_OPTIONS) build
+	xcodebuild SYMROOT=../build -project QuickLookStephenProject/QuickLookStephen.xcodeproj -configuration "Debug" $(XC_OPTIONS) build -alltargets
 
 install:
 	@if [ -d  "./build/Release/QLStephen.qlgenerator" ]; then \
